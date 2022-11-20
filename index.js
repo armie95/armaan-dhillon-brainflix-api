@@ -1,11 +1,11 @@
 const dotenv = require("dotenv");
 const express = require("express");
 const cors = require("cors");
-const uuid = require("uuid");
-const fs = require("fs");
+
 const app = express();
 
 console.clear();
+app.use(express.static("public"));
 app.use(cors());
 app.use(express.json());
 dotenv.config();
