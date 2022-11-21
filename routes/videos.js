@@ -39,14 +39,10 @@ router.post("", (req, res) => {
   const videos = JSON.parse(fs.readFileSync("./data/videos.json", "utf-8"));
 
   videoInfo.id = uuidv4();
-  //TODO: Should add the image link to the video.
   videoInfo.image = "http://localhost:8080/images/upload-video-preview.jpg";
   videos.push(videoInfo);
 
   fs.writeFileSync("./data/videos.json", JSON.stringify(videos, null, 4));
-
-  //TODO: Images should be served as static assets from the Node server.
-  //TODO: Including the image used for creating a new video via Upload Form
 
   res.status(201).json(videoInfo);
 });
