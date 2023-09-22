@@ -2,7 +2,7 @@ const axios = require("axios");
 
 //* Reaching out to brainFlix api to get the video details by videoId:
 const getVideoDetails = (req, res, videoId) => {
-  const API_KEY = "?api_key=4a33759a-a8e6-4bfa-9287-73814c966efd";
+  const API_KEY = process.env.API_KEYS;
 
   // Use your Heroku app's URL instead of the hardcoded URL
   const herokuAppURL = "https://armieflixapp-b2fd52d51814.herokuapp.com";
