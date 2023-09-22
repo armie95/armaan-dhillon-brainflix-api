@@ -39,7 +39,9 @@ router.post("", (req, res) => {
   const videos = JSON.parse(fs.readFileSync("./data/videos.json", "utf-8"));
 
   videoInfo.id = uuidv4();
-  videoInfo.image = "http://localhost:8080/images/upload-video-preview.jpg";
+  videoInfo.image =
+    "https://armieflixapp-b2fd52d51814.herokuapp.com/images/upload-video-preview.jpg";
+
   videos.push(videoInfo);
 
   fs.writeFileSync("./data/videos.json", JSON.stringify(videos, null, 4));
